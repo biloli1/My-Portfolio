@@ -25,7 +25,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
     console.log("Form submitted:", formData);
   };
 
@@ -33,31 +32,34 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "alex@example.com",
+      info: "365biloli@gmail.com",
       description: "Send me an email anytime!",
     },
     {
       icon: Phone,
       title: "Phone",
-      info: "+1 (555) 123-4567",
+      info: "+254 719 123 456",
       description: "Call me for urgent projects",
     },
     {
       icon: MapPin,
       title: "Location",
-      info: "New York, NY",
+      info: "NAIROBI, KENYA",
       description: "Available for local meetings",
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section
+      id="contact"
+      className="py-20 bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 text-white"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-orange-500">
             Let&apos;s Work Together
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Ready to bring your vision to life? Get in touch and let&apos;s
             create something amazing together.
           </p>
@@ -69,21 +71,21 @@ const Contact = () => {
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow duration-300"
+                className="bg-blue-900/40 border border-blue-800 backdrop-blur-sm hover:border-orange-500 transition-all duration-300"
               >
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/20">
                       <info.icon className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      <h3 className="text-lg font-semibold text-white mb-1">
                         {info.title}
                       </h3>
-                      <p className="text-purple-600 font-medium mb-1">
+                      <p className="text-orange-400 font-medium mb-1">
                         {info.info}
                       </p>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-400 text-sm">
                         {info.description}
                       </p>
                     </div>
@@ -93,13 +95,16 @@ const Contact = () => {
             ))}
 
             {/* CTA Card */}
-            <Card className="bg-gradient-to-br from-purple-500 to-blue-500 text-white">
+            <Card className="bg-gradient-to-br from-blue-800 to-orange-600 text-white shadow-lg shadow-orange-600/30">
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-bold mb-2">Quick Response</h3>
                 <p className="mb-4 opacity-90">
                   I typically respond to all inquiries within 24 hours.
                 </p>
-                <Button variant="secondary" className="w-full">
+                <Button
+                  variant="secondary"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold"
+                >
                   Schedule a Call
                 </Button>
               </CardContent>
@@ -108,9 +113,9 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="bg-blue-900/50 border border-blue-800 shadow-lg shadow-blue-900/40 backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900">
+                <CardTitle className="text-2xl font-bold text-orange-500">
                   Send Me a Message
                 </CardTitle>
               </CardHeader>
@@ -118,7 +123,9 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <Label htmlFor="name">Full Name</Label>
+                      <Label htmlFor="name" className="text-gray-300">
+                        Full Name
+                      </Label>
                       <Input
                         id="name"
                         name="name"
@@ -127,11 +134,13 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="Your name"
                         required
-                        className="mt-1"
+                        className="mt-1 bg-blue-950/60 border-blue-800 text-white placeholder-gray-400 focus:border-orange-500"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email">Email Address</Label>
+                      <Label htmlFor="email" className="text-gray-300">
+                        Email Address
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -140,13 +149,15 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
-                        className="mt-1"
+                        className="mt-1 bg-blue-950/60 border-blue-800 text-white placeholder-gray-400 focus:border-orange-500"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor="subject">Subject</Label>
+                    <Label htmlFor="subject" className="text-gray-300">
+                      Subject
+                    </Label>
                     <Input
                       id="subject"
                       name="subject"
@@ -155,12 +166,14 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="What's this about?"
                       required
-                      className="mt-1"
+                      className="mt-1 bg-blue-950/60 border-blue-800 text-white placeholder-gray-400 focus:border-orange-500"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-gray-300">
+                      Message
+                    </Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -169,14 +182,14 @@ const Contact = () => {
                       placeholder="Tell me about your project..."
                       rows={6}
                       required
-                      className="mt-1"
+                      className="mt-1 bg-blue-950/60 border-blue-800 text-white placeholder-gray-400 focus:border-orange-500"
                     />
                   </div>
 
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-800 to-orange-600 hover:from-blue-900 hover:to-orange-700 text-white font-semibold shadow-lg shadow-orange-500/30"
                   >
                     <Send className="mr-2 h-4 w-4" />
                     Send Message

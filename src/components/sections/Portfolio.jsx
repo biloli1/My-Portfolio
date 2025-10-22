@@ -80,13 +80,14 @@ const Portfolio = () => {
       : projects.filter((project) => project.category === activeFilter);
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-[#0a192f] text-orange-400">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-400 mb-4">
             My Portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-orange-200 max-w-3xl mx-auto mb-8">
             Explore my latest design projects and creative solutions that have
             helped brands tell their stories.
           </p>
@@ -96,12 +97,11 @@ const Portfolio = () => {
             {categories.map((category) => (
               <Button
                 key={category}
-                variant={activeFilter === category ? "default" : "outline"}
                 onClick={() => setActiveFilter(category)}
                 className={
                   activeFilter === category
-                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-                    : "border-purple-200 text-purple-700 hover:bg-purple-50"
+                    ? "bg-orange-500 text-white hover:bg-orange-600"
+                    : "border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white"
                 }
               >
                 {category}
@@ -115,7 +115,7 @@ const Portfolio = () => {
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
-              className="group overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in"
+              className="group overflow-hidden bg-[#112240] border border-orange-400 hover:shadow-xl hover:shadow-orange-500/20 transition-all duration-300"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -127,16 +127,14 @@ const Portfolio = () => {
                   <div className="flex space-x-3">
                     <Button
                       size="sm"
-                      variant="secondary"
-                      className="bg-white text-gray-900 hover:bg-gray-100"
+                      className="bg-orange-500 text-white hover:bg-orange-600"
                     >
                       <Eye className="h-4 w-4 mr-1" />
                       View
                     </Button>
                     <Button
                       size="sm"
-                      variant="secondary"
-                      className="bg-white text-gray-900 hover:bg-gray-100"
+                      className="bg-orange-500 text-white hover:bg-orange-600"
                     >
                       <ExternalLink className="h-4 w-4 mr-1" />
                       Live
@@ -148,18 +146,22 @@ const Portfolio = () => {
                 <div className="mb-2">
                   <Badge
                     variant="secondary"
-                    className="bg-purple-100 text-purple-700"
+                    className="bg-orange-100 text-orange-700"
                   >
                     {project.category}
                   </Badge>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-xl font-semibold text-orange-400 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-orange-200 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-1">
                   {project.tags.map((tag, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="text-xs border-orange-400 text-orange-300"
+                    >
                       {tag}
                     </Badge>
                   ))}
@@ -169,8 +171,9 @@ const Portfolio = () => {
           ))}
         </div>
 
+        {/* View All Button */}
         <div className="text-center mt-12">
-          <Button className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white">
+          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3">
             View All Projects
           </Button>
         </div>

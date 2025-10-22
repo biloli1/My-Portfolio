@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import {
   Facebook,
   Instagram,
@@ -9,14 +12,26 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
+  const navItems = ["Home", "About", "Portfolio", "Services", "Contact"];
+
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#0a2540] text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
+          {/* Brand & Logo */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-4">
-              Alex Rivera
+            <a href="#home" className="flex items-center mb-4">
+              <Image
+                src="/main-logo.svg"
+                alt="Main Logo"
+                width={140}
+                height={50}
+                priority
+                className="object-contain"
+              />
+            </a>
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent mb-4">
+              Emmanuel Biloli
             </h3>
             <p className="text-gray-300 mb-6 max-w-md">
               Creative graphic designer passionate about crafting visual
@@ -33,9 +48,9 @@ const Footer = () => {
                 <a
                   key={index}
                   href={href}
-                  className="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition-colors duration-200"
+                  className="p-2 rounded-lg bg-[#0a2540]/80 transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-400 hover:via-orange-500 hover:to-orange-600"
                 >
-                  <Icon className="h-5 w-5" />
+                  <Icon className="h-5 w-5 text-white" />
                 </a>
               ))}
             </div>
@@ -43,46 +58,48 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-orange-400">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
-              {["Home", "About", "Portfolio", "Services", "Contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-gray-300 hover:text-purple-400 transition-colors duration-200"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                )
-              )}
+              {navItems.map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className="text-gray-300 hover:text-orange-400 transition-colors duration-200"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold mb-4 text-orange-400">
+              Contact Info
+            </h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-purple-400" />
-                <span className="text-gray-300 text-sm">alex@example.com</span>
+                <Mail className="h-4 w-4 text-orange-400" />
+                <span className="text-gray-300 text-sm">365biloli@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-purple-400" />
-                <span className="text-gray-300 text-sm">+1 (555) 123-4567</span>
+                <Phone className="h-4 w-4 text-orange-400" />
+                <span className="text-gray-300 text-sm">+254 719 172 691</span>
               </div>
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-purple-400" />
-                <span className="text-gray-300 text-sm">New York, NY</span>
+                <MapPin className="h-4 w-4 text-orange-400" />
+                <span className="text-gray-300 text-sm">NAIROBI, KENYA</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+        <div className="border-t border-orange-500/30 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Alex Rivera. All rights reserved.
+            © {new Date().getFullYear()} Emmanuel Biloli. All rights reserved.
           </p>
         </div>
       </div>
