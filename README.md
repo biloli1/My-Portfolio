@@ -87,8 +87,8 @@ This project is free to use.
 
 Created by **Pawan Kumavat** — feel free to reach out via:
 
-- Email: [pawankumavat042@gmail.com](mailto:pawankumavat042@gmail.com)
-- LinkedIn: [Pawan Kumavat](https://www.linkedin.com/in/pawan-kumavat-11b105297/)
-- Portfolio: [pawan kumavat](https://pawan-kumavat.vercel.app/)
+- Email: [365biloli@gmail.com](mailto:365biloli@gmail.com)
+- LinkedIn: [Emmanuel Biloli](https://www.linkedin.com/in/pawan-kumavat-11b105297/)
+- Portfolio: [Emmanuel Biloli](https://pawan-kumavat.vercel.app/)
 
 _Thank you for checking out my portfolio project!_
